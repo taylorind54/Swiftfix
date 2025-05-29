@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SwiftFix Protection</title>
+</head>
+<body>
+  <h1>Protect Your Phone</h1>
+  <form id="signupForm">
+    <input type="text" id="username" placeholder="Username" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <button type="submit">Sign Up & Checkout</button>
+  </form>
+
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const username = document.getElementById("username").value;
+
+      await fetch("/api/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, username })
+      });
+
+      const checkout = await fetch("/api/checkout", {
+        method: "POST"
+      });
+
+      const data = await checkout.json();
+      if (data.url) window.location.href = data.url;
+    });
+  </script>
+</body>
+</html>
