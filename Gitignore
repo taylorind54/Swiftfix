@@ -1,0 +1,7 @@
+STRIPE_SECRET_KEY=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
+STRIPE_PUBLISHABLE_KEY=pk_live_51RTyurRtsPfaFkBNtAHgbvmsgjcqnUxRoUMwet6wLEi1DUzgskLcMuzAmbpBGuBQIxwS3d6IQ7bH7Aepd80lNEBw007Ev8xaMP
+FRONTEND_URL=https://github.com/taylorind54/SwiftfixRepo.git
+PORT=10000
+
+# Optional but recommended:
+STRIPE_PRICE_ID=price_1RTzQNRtsPfaFkBNlVJplb6Z
